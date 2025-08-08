@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\CapitalGain.Domain\CapitalGain.Domain.csproj" />
   </ItemGroup>
 
 </Project>
