@@ -3,6 +3,8 @@ services:
     build:
       context: ..
       dockerfile: devops/dockerfile
+    image: capital-gains:latest
+    container_name: capital-gains
     ports:
       - "5000:5000"
     stdin_open: true

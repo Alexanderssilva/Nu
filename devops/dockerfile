@@ -2,11 +2,15 @@ FROM  mcr.microsoft.com/dotnet/sdk:9.0 as build
 RUN apt-get update && apt-get install -y bash
 WORKDIR /app
 
+COPY ./CapitalGain.sln ./
 COPY ./src ./src
 COPY ./test ./test
-COPY ./CapitalGain.sln ./
+
 
 RUN dotnet restore
+
+RUN dotnet test ./test/CapitalGain.Test/CapitalGain.Test.csproj --logger "trx;LogFileName=test-results.trx" --results-directory /app/test/TestResults
+
 RUN dotnet publish -c Release -o /publish
 
 FROM mcr.microsoft.com/dotnet/runtime:9.0
