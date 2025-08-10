@@ -3,7 +3,7 @@ using CapitalGain.Infrastructure.CompositionRoot;
 namespace CapitalGain.Test.TestCases;
 
 [TestClass]
-public class TestCases
+public class UnitTest1
 {
     private readonly List<(string, string)> testInput =
     [
