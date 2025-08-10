@@ -6,5 +6,5 @@ namespace CapitalGain.Domain.ValueObjects;
 public class TaxResult
 {
     [JsonPropertyName("tax")]
-    public double Tax { get; set; }
+    public decimal Tax { get; set; }
 }
