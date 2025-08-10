@@ -1,7 +1,16 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "name": ".NET Core Launch (console)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/src/CapitalGain.CLI/bin/Debug/net9.0/CapitalGain.CLI.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/src/CapitalGain.CLI",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        }
+    ]
 }

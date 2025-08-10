@@ -1,9 +1,10 @@
 using System;
 using CapitalGain.Domain.Entities;
+using CapitalGain.Domain.ValueObjects;
 
 namespace CapitalGain.Infrastructure.Interfaces;
 
 public interface IJsonOutputWriter
 {
-    List<string> Write(List<List<Transaction>> operations);
+    string Write(List<TaxResult> operations);
 }

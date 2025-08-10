@@ -1,13 +1,15 @@
-FROM  mcr.microsoft.com/dotnet/sdk:8.0 as build
+FROM  mcr.microsoft.com/dotnet/sdk:9.0 as build
+RUN apt-get update && apt-get install -y bash
 WORKDIR /app
 
 COPY ./src ./src
+COPY ./test ./test
 COPY ./CapitalGain.sln ./
 
 RUN dotnet restore
-RUN dotnet publish - c Release -o /publish
+RUN dotnet publish -c Release -o /publish
 
-FROM mcr.microsoft.com/dotnet/runtime:8.0
+FROM mcr.microsoft.com/dotnet/runtime:9.0
 WORKDIR /app
 COPY --from=build /publish .
 ENTRYPOINT ["./CapitalGain.CLI"]

@@ -10,15 +10,15 @@ public class JsonInputReader : IJsonInputReader
     {
     }
 
-    public List<List<Transaction>> Parse(string line)
+    public List<List<Money>> Parse(string line)
     {
-        var result = new List<List<Transaction>>();
+        var result = new List<List<Money>>();
         if (string.IsNullOrWhiteSpace(line))
             throw new ArgumentException("Input line cannot be null or empty.", nameof(line));
 
         try
         {
-            var transaction = JsonSerializer.Deserialize<List<Transaction>>(line) ?? [];
+            var transaction = JsonSerializer.Deserialize<List<Money>>(line) ?? [];
             result.Add(transaction);
         }
         catch (JsonException ex)
